@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :blogs
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions',confirmations: 'users/confirmations' }
   root "home#index"
   get '/user/blog' => "blogs#userblog" , as: "user_blog"
   post '/blogs/:id/comment' => "comment#create" ,as: "create_comment"
